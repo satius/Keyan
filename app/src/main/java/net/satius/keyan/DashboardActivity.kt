@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class DashboardActivity : AppCompatActivity() {
 
     private val buttonStartService by lazy { findViewById<Button>(R.id.button_start_service) }
     private val buttonStopService by lazy { findViewById<Button>(R.id.button_stop_service) }
