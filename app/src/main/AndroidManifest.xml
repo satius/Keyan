@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="net.satius.keyan">
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -9,13 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardActivity">
+        <activity
+            android:name=".DashboardActivity"
+            android:launchMode="singleTask">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <service
+            android:name=".notification.keyoperation.KeyOperatableNotificationImpl$NotificationService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".notification.keyoperation.KeyOperatableNotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
     </application>
 
 </manifest>
