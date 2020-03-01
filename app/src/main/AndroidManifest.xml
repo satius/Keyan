@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="net.satius.keyan">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
@@ -27,14 +28,26 @@
 
         </activity>
 
+
+        <!--TODO: fix WARNING-->
         <service
-            android:name=".notification.keyoperation.KeyOperatableNotificationImpl$NotificationService"
+            android:name=".notification.keyoperation.KeyOperatableNotificationService"
+            android:directBootAware="true"
             android:exported="false" />
 
+        <!--TODO: fix WARNING-->
         <receiver
             android:name=".notification.keyoperation.KeyOperatableNotificationReceiver"
+            android:directBootAware="true"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false">
+
+            <intent-filter>
+                <!-- 端末起動時のインテント -->
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+
+        </receiver>
 
     </application>
 

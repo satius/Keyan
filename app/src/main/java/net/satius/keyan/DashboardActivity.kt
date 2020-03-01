@@ -7,8 +7,8 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import net.satius.keyan.notification.keyoperation.KeyOperatableNotification.Companion.CHANNEL_ID
-import net.satius.keyan.notification.keyoperation.KeyOperatableNotificationImpl
+import net.satius.keyan.notification.keyoperation.KeyOperatableNotificationControllerImpl
+import net.satius.keyan.notification.keyoperation.KeyOperatableNotificationService.Companion.CHANNEL_ID
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -16,12 +16,18 @@ class DashboardActivity : AppCompatActivity() {
     private val buttonStopService by lazy { findViewById<Button>(R.id.button_stop_service) }
 
     private val notificationManager by lazy { getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager }
-    private val keyOperatableNotification by lazy { KeyOperatableNotificationImpl(this) } // TODO: DI
+    private val KeyOperatableNotificationController by lazy {
+        KeyOperatableNotificationControllerImpl(
+            this
+        )
+    } // TODO: DI
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         title = ("Dashboard")
+
+        // TODO: Channelは重複して作成しないようにチェックを実装
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
@@ -39,12 +45,13 @@ class DashboardActivity : AppCompatActivity() {
         buttonStopService.setOnClickListener { stopService() }
     }
 
+    // TODO: 端末起動時にも通知送信できるようにローカルDB上の設定項目書き換え
     private fun startService() {
-        keyOperatableNotification.startForegroundService()
+        KeyOperatableNotificationController.startForegroundService()
     }
 
     private fun stopService() {
-        keyOperatableNotification.stopForegroundService()
+        KeyOperatableNotificationController.stopForegroundService()
     }
 
 }
