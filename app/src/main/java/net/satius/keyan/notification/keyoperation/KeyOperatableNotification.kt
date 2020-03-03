@@ -88,7 +88,7 @@ class KeyOperatableNotificationImpl(private val context: Context) : KeyOperatabl
 
         private fun createNotification(): Notification {
             return NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.sesames) // TODO: fix
+                .setSmallIcon(R.drawable.key)
                 .setContentTitle("イエノカギ") // TODO
                 .setContentText("Locked/Unlocked") // TODO
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
