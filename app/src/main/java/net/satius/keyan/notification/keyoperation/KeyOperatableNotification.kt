@@ -27,25 +27,25 @@ interface KeyOperatableNotification {
     ) {
         LOCK(
             "lock456787678",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_lock_24,
             "Lock",
             true
         ),
         UNLOCK(
             "unlock876567897890",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_lock_open_24,
             "Unlock",
             true
         ),
         REFRESH(
             "refresh0987890-",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_refresh_24,
             "Refresh",
             false
         ),
         LAUNCH(
             "launch567890-0",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_settings_24,
             "Launch",
             false
         )
@@ -88,7 +88,7 @@ class KeyOperatableNotificationImpl(private val context: Context) : KeyOperatabl
 
         private fun createNotification(): Notification {
             return NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.sesames) // TODO: fix
+                .setSmallIcon(R.drawable.key)
                 .setContentTitle("イエノカギ") // TODO
                 .setContentText("Locked/Unlocked") // TODO
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
