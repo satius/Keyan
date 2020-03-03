@@ -27,25 +27,25 @@ interface KeyOperatableNotification {
     ) {
         LOCK(
             "lock456787678",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_lock_24,
             "Lock",
             true
         ),
         UNLOCK(
             "unlock876567897890",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_lock_open_24,
             "Unlock",
             true
         ),
         REFRESH(
             "refresh0987890-",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_refresh_24,
             "Refresh",
             false
         ),
         LAUNCH(
             "launch567890-0",
-            R.drawable.ic_launcher_foreground, // TODO: fix
+            R.drawable.baseline_settings_24,
             "Launch",
             false
         )
