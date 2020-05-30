@@ -1,1 +1,4 @@
+include ':registry'
+include ':infrastructure'
+include ':core'
 include ':app'
