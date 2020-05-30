@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "176022538732",
+    "firebase_url": "https://keyan-5c8c4.firebaseio.com",
+    "project_id": "keyan-5c8c4",
+    "storage_bucket": "keyan-5c8c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176022538732:android:226efc0d8f8795633798c9",
+        "android_client_info": {
+          "package_name": "net.satius.keyan.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176022538732-ldssc1gqv3p8d4tk11j1souc3fc6mqjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVEuqZy5VHwHuEOD3mIZY761sim1fp8dM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176022538732-ldssc1gqv3p8d4tk11j1souc3fc6mqjp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
